@@ -129,4 +129,5 @@ dmypy.json
 .pyre/
 
 
-#Future Ignore
+#Ignore secrets
+.secrets/
