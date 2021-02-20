@@ -16,7 +16,7 @@ class  WebsiteCheck:
         
         try:
             r = requests.get(self.url, timeout = 1)
-            details["error"] = False
+            details["error"] = ""
             details["status"] = r.status_code
             details["elapsed"] = r.elapsed.total_seconds()
             details["regex_found"] = self.__regexCheck(r.text)
