@@ -23,7 +23,9 @@ class  WebsiteCheck:
 
         except Exception as e:
             details["error"] = str(e)
-        
+            details["status"] = -1
+            details["elapsed"] = -1
+            details["regex_found"] = False
 
         return details
     

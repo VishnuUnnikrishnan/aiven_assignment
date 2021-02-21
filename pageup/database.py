@@ -6,7 +6,7 @@ from datetime import datetime
 class dbwriter:
 
     #initialise class
-    def __init__(self, host="localhost", port=5432, dbname="pageup", user="postgres", password="postgres", table="pageup", protocol=None):
+    def __init__(self, host="localhost", port=5432, dbname="pageup", user="postgres", password=None, table="pageup", protocol=None):
         self.table = table
         uri = ""
         port = str(port)

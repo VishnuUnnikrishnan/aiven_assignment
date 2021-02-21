@@ -42,7 +42,7 @@ class WebpageProducer:
 
 #This is the specific consumer class
 class WebpageConsumer:
-    def __init__(self, topic="PageUp", server="localhost", port=9092, protocol=None, data=None,client_id="demo", group_id="demo"): 
+    def __init__(self, topic="PageUp", server="localhost", port=9092, client_id="demo", group_id="demo", protocol=None, data=None): 
         try:
             if protocol == None:
                 consumer = KafkaConsumer(topic,
