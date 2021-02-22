@@ -34,12 +34,72 @@ There are two methods that can be used for installation, manually or through aut
 
 1. Linux distribution 
 2. Python 3 and pip installed
-3. 
 
 ### Automation
 
 1. Download the [install.sh](https://raw.githubusercontent.com/VishnuUnnikrishnan/avien_assignment/main/automation/install.sh) script to the folder you want the application to be installed in.
 2. Change permissions of the downloaded file to allow execution chmod +x install.sh
-3. Run script
+3. Run script, The script will create the required environment folders and install the CRON job using ./install.sh 3.
+4. Add the required certificates and keys to the .secret folder. In that folder you will also find a file called dbpass, add your password to that file.
+5. Update the settings.json file. This file is very important as it controls everything.
 
-The script will create the required environment and install the 
+The default cron job is set to run once per minute and consequently the db table will be updated every minute.
+
+#### Distributed Mode
+It is possible to install in distributed mode. 
+
+1. ./install.sh 1 -- will install only the web page checker and Kafka producer component.
+2. ./install.sh 2 -- will install only the kafka consumer and Database writer portion.
+
+You will need to update settings.json for each componnet, but you only need to update the relevant sections.  
+
+### Manual
+1. Download the latests release by going to the dist folder and downloading the tar.gz file. This is a source distribution.
+2. Run pip install xxxx.tar.gz
+3. You will be able to now use any of the available classes and scripts to build your own implementation.
+4. You will need to manually setup the environment folders etc for the available scriipts to run.
+
+### Settings.json
+This file contains all user configuration. Consequently this file should be one of two files edited by the user. This file needs to be in JSON format.
+|Key|Default Value|Description|
+|-|-|-|
+|"URL"|"https://www.google.com"| Required This is the page that will be checked|
+|-|-|-|
+|"REGEX"|""|Required This is the Regex that will be checked on page. The default will always be matched|
+|-|-|-|
+|"KAFKA_SERVER"|"localhost"| Required, The kafka server hostname|
+|-|-|-|
+|"KAFKA_PORT" | 9092|Required, The kafka server port |
+|-|-|-|
+|"KAFKA_TOPIC" | "PageUp"|Required, The kafka topic |
+|-|-|-|
+|"KAFKA_PROTOCOL" | "SSL"|Optional, The kafka connection protocol. SSL is reccommended as it is secure, if this is removed it will drop to non-SSL  comms |
+|-|-|-|
+|"KAFKA_CLIENT_ID" | "assn_client"|Required, The kafka consumer client id |
+|-|-|-|
+|"KAFKA_GROUP_ID" | "assn_client"|Required, The kafka consumer group id |
+|-|-|-|
+|"KAFKA_CA_FILE"| ".secrets/ca.pem"|Required if KFKA_PROTOCOL is set|
+|-|-|-|
+|"KAFKA_CERT_FILE"|".secrets/service.cert"|Required if KFKA_PROTOCOL is set|
+|-|-|-|
+|"KAFKA_KEY_FILE"|.secrets/service.key"|Required if KFKA_PROTOCOL is set|
+|-|-|-|
+|"DB_PROTOCOL" | "SSL"|Optional, The DB connection protocol. SSL is reccommended as it is secure, if this is removed it will drop to non-SSL  comms |
+|-|-|-|
+|"DB_NAME" | "pageup"|Required, the DB name|
+|-|-|-|
+|"DB_USER" | "postgres"|Required the DB username|
+|-|-|-|
+|"DB_PASSWORD" | ".secrets/dbpass"|Required the DB password. This is a file location as it is bad practice to have passwords in source code.|
+|-|-|-|
+|"DB_HOST" | "localhost"|Required Database server hostname|
+|-|-|-|
+|"DB_PORT" | 5432|Required Database port|
+|-|-|-|
+|"DB_TABLE" | "pageup"|Required DB table name|
+|-|-|-|
+
+
+
+
