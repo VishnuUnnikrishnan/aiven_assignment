@@ -1,3 +1,4 @@
+#! /usr/bin/python3
 """
 This module checks that a webpage is up and sends it
 to a kafka topic.
@@ -12,7 +13,7 @@ import json
 def main():
     config = Settings()
     settings = config.getSettings()
-    wc = WebsiteCheck(url=settings["URL"], regex=settings["REGEX"])
+    wc = WebsiteCheck(url = settings["URL"], regex = settings["REGEX"] )
     pageUpDetails = wc.checkPage()
     producer = None
     

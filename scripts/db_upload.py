@@ -1,3 +1,4 @@
+#! /usr/bin/python3
 """
 This module reads from a kafka topic and
 writes it to a postgres instance.

@@ -10,4 +10,7 @@ logger = logging.getLogger('PageUpLogger')
 
 def log_error(message, exceptions):
     time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    logger.error(time+" - "+message+"- Exception: "+str(exceptions))
+    error_str = time+" - "+message+"- Exception: "+str(exceptions)
+    logger.error(error_str)
+    
+    return error_str

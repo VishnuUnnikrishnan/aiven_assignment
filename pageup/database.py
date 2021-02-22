@@ -1,12 +1,12 @@
 #The Database class writes to the database.
-import psycopg2 as pg
+import psycopg2
 from . import log
 from datetime import datetime
 
 class dbwriter:
 
     #initialise class
-    def __init__(self, host="localhost", port=5432, dbname="pageup", user="postgres", password=None, table="pageup", protocol=None):
+    def __init__(self, host="localhost", port=5432, dbname="pageup", user="postgres", password=None, table="pageup", protocol=None, pg=psycopg2):
         self.table = table
         uri = ""
         port = str(port)
@@ -19,7 +19,8 @@ class dbwriter:
                 uri = "postgres://"+user+":"+password+"@"+host+":"+port+"/"+dbname+"?sslmode=require"
             else:
                 log.log_error("Unable to create URI","Protocol not supported")
-            
+
+            self.uri = uri
             conn = pg.connect(uri)
             cursor = conn.cursor()
             self.conn = conn
