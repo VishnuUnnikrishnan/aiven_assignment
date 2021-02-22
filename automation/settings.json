@@ -10,6 +10,7 @@
 "KAFKA_CA_FILE": ".secrets/ca.pem",
 "KAFKA_CERT_FILE":".secrets/service.cert",
 "KAFKA_KEY_FILE":".secrets/service.key",
+"DB_PROTOCOL" : "SSL",
 "DB_NAME" : "pageup",
 "DB_USER" : "postgres",
 "DB_PASSWORD" : ".secrets/dbpass",
