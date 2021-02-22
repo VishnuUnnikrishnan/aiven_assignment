@@ -82,6 +82,11 @@ This file contains all user configuration. Consequently this file should be one 
 |"DB_PORT" | 5432|Required Database port|
 |"DB_TABLE" | "pageup"|Required DB table name|
 
+### .secrets/
+Add certificates, keys into this folder. Ideally in a secure environment this should be replaced with hashicorp vault, cyberark or some are secrets locker solution. If you want to use a different folder or location, just edit the corresponding setting in settings.json. You will notice that the .secrets file has not been uploaded to github, this is for security purposes.
+
+### .secrets/dbpass
+This file contains the db password. This also needs to be updated by the user. What this does is prevent the password being exposed in source code.
 
 
 
