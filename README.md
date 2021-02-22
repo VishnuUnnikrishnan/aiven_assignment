@@ -64,39 +64,22 @@ This file contains all user configuration. Consequently this file should be one 
 |Key|Default Value|Description|
 |-|-|-|
 |"URL"|"https://www.google.com"| Required This is the page that will be checked|
-
 |"REGEX"|""|Required This is the Regex that will be checked on page. The default will always be matched|
-
 |"KAFKA_SERVER"|"localhost"| Required, The kafka server hostname|
-
 |"KAFKA_PORT" | 9092|Required, The kafka server port |
-
 |"KAFKA_TOPIC" | "PageUp"|Required, The kafka topic |
-
 |"KAFKA_PROTOCOL" | "SSL"|Optional, The kafka connection protocol. SSL is reccommended as it is secure, if this is removed it will drop to non-SSL  comms |
-
 |"KAFKA_CLIENT_ID" | "assn_client"|Required, The kafka consumer client id |
-
 |"KAFKA_GROUP_ID" | "assn_client"|Required, The kafka consumer group id |
-
 |"KAFKA_CA_FILE"| ".secrets/ca.pem"|Required if KFKA_PROTOCOL is set|
-
 |"KAFKA_CERT_FILE"|".secrets/service.cert"|Required if KFKA_PROTOCOL is set|
-
 |"KAFKA_KEY_FILE"|.secrets/service.key"|Required if KFKA_PROTOCOL is set|
-
 |"DB_PROTOCOL" | "SSL"|Optional, The DB connection protocol. SSL is reccommended as it is secure, if this is removed it will drop to non-SSL  comms |
-
 |"DB_NAME" | "pageup"|Required, the DB name|
-
 |"DB_USER" | "postgres"|Required the DB username|
-
 |"DB_PASSWORD" | ".secrets/dbpass"|Required the DB password. This is a file location as it is bad practice to have passwords in source code.|
-
 |"DB_HOST" | "localhost"|Required Database server hostname|
-
 |"DB_PORT" | 5432|Required Database port|
-
 |"DB_TABLE" | "pageup"|Required DB table name|
 
 
