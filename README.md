@@ -55,8 +55,13 @@ The default cron job is set to run once per minute and consequently the db table
 It is possible to install in distributed mode. 
 
 1. ./install.sh 1 -- will install only the web page checker and Kafka producer component.
+```shell
+  ./install.sh 1
+```
 2. ./install.sh 2 -- will install only the kafka consumer and Database writer portion.
-
+```shell
+  ./install.sh 1
+```
 You will need to update settings.json for each componnet, but you only need to update the relevant sections.  
 
 ### Manual
@@ -93,6 +98,9 @@ Add certificates, keys into this folder. Ideally in a secure environment this sh
 
 ### .secrets/dbpass
 This file contains the db password. This also needs to be updated by the user. What this does is prevent the password being exposed in source code.
+
+## Testing
+Unit testing was carried out for all of the main modules.
 
 
 
