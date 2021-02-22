@@ -62,7 +62,7 @@ You will need to update settings.json for each componnet, but you only need to u
 ### Settings.json
 This file contains all user configuration. Consequently this file should be one of two files edited by the user. This file needs to be in JSON format.
 |Key|Default Value|Description|
-
+|-|-|-|
 |"URL"|"https://www.google.com"| Required This is the page that will be checked|
 
 |"REGEX"|""|Required This is the Regex that will be checked on page. The default will always be matched|
