@@ -38,8 +38,14 @@ There are two methods that can be used for installation, manually or through aut
 ### Automation
 
 1. Download the [install.sh](https://raw.githubusercontent.com/VishnuUnnikrishnan/avien_assignment/main/automation/install.sh) script to the folder you want the application to be installed in.
-2. Change permissions of the downloaded file to allow execution chmod +x install.sh
-3. Run script, The script will create the required environment folders and install the CRON job using ./install.sh 3.
+2. Change permissions of the downloaded file to allow execution 
+  ```shell
+  chmod +x install.sh
+  ```
+3. Run script, The script will create the required environment folders and install the CRON job using 
+```shell
+./install.sh 3.
+```
 4. Add the required certificates and keys to the .secret folder. In that folder you will also find a file called dbpass, add your password to that file.
 5. Update the settings.json file. This file is very important as it controls everything.
 
