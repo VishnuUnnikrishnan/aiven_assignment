@@ -5,10 +5,10 @@ echo "Setting up environment"
 mkdir ".secrets"
 mkdir "logs"
 touch ".secrets/dbpass"
-curl -o settings.json "https://raw.githubusercontent.com/VishnuUnnikrishnan/avien_assignment/main/automation/settings.json"
+curl -o settings.json "https://raw.githubusercontent.com/VishnuUnnikrishnan/aiven_assignment/main/automation/settings.json"
 
 #Download the PageUp distribution and install it
-curl -L -o PageUp-0.0.5.tar.gz "https://github.com/VishnuUnnikrishnan/avien_assignment/raw/main/dist/PageUp-0.0.5.tar.gz"
+curl -L -o PageUp-0.0.5.tar.gz "https://github.com/VishnuUnnikrishnan/aiven_assignment/raw/main/dist/PageUp-0.0.5.tar.gz"
 pip3 install PageUp-0.0.5.tar.gz
 
 #Setup file path in bash scripts to be used in cron jobs (allows to change directory)
