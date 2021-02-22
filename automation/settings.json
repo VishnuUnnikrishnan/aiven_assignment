@@ -1,0 +1,19 @@
+{
+"URL":"https://www.google.com",
+"REGEX":"",
+"KAFKA_SERVER":"localhost",
+"KAFKA_PORT" : 9092,
+"KAFKA_TOPIC" : "PageUp",
+"KAFKA_PROTOCOL" : "SSL",
+"KAFKA_CLIENT_ID" : "assn_client",
+"KAFKA_GROUP_ID" : "assn_client",
+"KAFKA_CA_FILE": ".secrets/ca.pem",
+"KAFKA_CERT_FILE":".secrets/service.cert",
+"KAFKA_KEY_FILE":".secrets/service.key",
+"DB_NAME" : "pageup",
+"DB_USER" : "postgres",
+"DB_PASSWORD" : ".secrets/dbpass",
+"DB_HOST" : "localhost",
+"DB_PORT" : 5432,
+"DB_TABLE" : "pageup"
+}
